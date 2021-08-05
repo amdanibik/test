@@ -25,3 +25,23 @@ convertNumber(5);
 ```
 
 #### 2. After change the code, make a pull request
+
+<?php
+function convertNumber($number) {
+    $number = sprintf("%04d",$number);
+    return $number;
+}
+
+?>
+
+<form name="convert" method="post">
+	Convert Number<br>
+	<input type="text" name="number"><input type="submit" name="submit" value="convert">
+</form>
+
+<?php
+	if(isset($_POST['submit'])){
+		$number = $_POST['number'];
+		echo convertNumber($number);
+	}
+?>
